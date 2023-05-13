@@ -14,6 +14,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//mongodb+srv://haider:Furcfurc1.@cluster0.mpdropb.mongodb.net/ecommerce
 
 mongoose.connect('mongodb+srv://haider:Furcfurc1.@cluster0.mpdropb.mongodb.net/ecommerce').then(()=> console.log("Connected to DB"));
 app.use('/api/uploads', uploadRouter);

@@ -112,7 +112,12 @@ productRouter.get(
       'seller',
       'seller.name seller.logo seller.rating seller.numReviews'
     );
+    
+    // product.countInStock = product.quantity; //creating a new variable to store a quantity 
+    // console.log(product.countInStock);// doesn't exist in haider's database
     if (product) {
+      
+      // console.log(product);
       res.send(product);
     } else {
       res.status(404).send({ message: 'Product Not Found' });

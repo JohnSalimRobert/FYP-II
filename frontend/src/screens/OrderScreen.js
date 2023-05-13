@@ -122,6 +122,7 @@ export default function OrderScreen(props) {
               <div className="card card-body">
                 <h2>Order Items</h2>
                 <ul>
+                  {console.log(order.orderItems)}
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
                       <div className="row">
@@ -151,7 +152,7 @@ export default function OrderScreen(props) {
         </div>
         <div className="col-2">
           <div className="card card-body">
-            <ul>
+            <ul className='example'>
               <li>
                 <h2>Order Summary</h2>
               </li>
@@ -194,10 +195,10 @@ export default function OrderScreen(props) {
                       )}
                       {loadingPay && <LoadingBox></LoadingBox>}
 
-                      <PayPalButton
+                      {/* <PayPalButton
                         amount={order.totalPrice}
                         onSuccess={successPaymentHandler}
-                      ></PayPalButton>
+                      ></PayPalButton> */}
                     </>
                   )}
                 </li>

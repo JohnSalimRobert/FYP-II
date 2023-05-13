@@ -15,7 +15,8 @@ export default function ProductEditScreen(props) {
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
   const [category, setCategory] = useState('');
-  const [countInStock, setCountInStock] = useState('');
+  // const [countInStock, setCountInStock] = useState('');
+  const [quantity, setQuantity] = useState('');
   const [brand, setBrand] = useState('');
   const [description, setDescription] = useState('');
 
@@ -42,7 +43,8 @@ export default function ProductEditScreen(props) {
       setPrice(product.price);
       setImage(product.image);
       setCategory(product.category);
-      setCountInStock(product.countInStock);
+      // setCountInStock(product.countInStock);
+      setQuantity(product.quantity);
       setBrand(product.brand);
       setDescription(product.description);
     }
@@ -58,7 +60,8 @@ export default function ProductEditScreen(props) {
         image,
         category,
         brand,
-        countInStock,
+        quantity,
+        // countInStock,
         description,
       })
     );
@@ -166,13 +169,21 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="countInStock">Count In Stock</label>
-              <input
+              {/* <label htmlFor="countInStock">Count In Stock</label> */}
+              <label htmlFor="Quantity">Count In Stock</label>
+              {/* <input
                 id="countInStock"
                 type="text"
                 placeholder="Enter countInStock"
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
+              ></input> */}
+              <input
+                id="quantity"
+                type="text"
+                placeholder="Enter countInStock"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
               ></input>
             </div>
             <div>

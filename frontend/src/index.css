@@ -27,16 +27,100 @@ body {
 }
 header {
   grid-area: header;
-  background-color: #16181b;
+  background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
 }
 main {
   grid-area: main;
   padding: 1rem;
 }
-footer {
+/* footer {
   grid-area: footer;
-  background-color: #16181b;
-  color: #ffffff;
+  background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+  color: #afabab;
+} */
+
+footer{
+  width: 100%;
+}
+.footer-container {
+  grid-area: footer;
+  width: 100%;
+  background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+  color: #afabab;
+  padding: 50px 0;
+  
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-col {
+  text-align: center;
+  width: 25%;
+  padding: 0 15px;
+}
+.icons{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+i.fa.white {
+  color: white;
+}
+.footer-col h4 {
+  text-align: center;
+  color: #cd542b;
+  margin-bottom: 30px;
+}
+
+.footer-col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col ul li a {
+  color: #ede8e8;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #333;
+}
+
+.footer-row p {
+  width: 100%;
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+    color:#ede8e8
 }
 /* Common */
 h1 {
@@ -473,6 +557,8 @@ img.large {
 }
 .example {
   display: inline;
+  list-style: none;
+
 }
 .unlist {
   list-style-type: none; 

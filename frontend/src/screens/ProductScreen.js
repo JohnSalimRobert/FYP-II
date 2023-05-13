@@ -16,6 +16,7 @@ export default function ProductScreen(props) {
 
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
+  console.log(productDetails);
   const { loading, error, product } = productDetails;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -86,19 +87,19 @@ export default function ProductScreen(props) {
             <div className="col-2">
               <div className="card card-body">
                 <ul className='unlist'>
-                 {/*  <li>
+                   {/* <li>
                     <p>Seller</p>
                     <h2 className='example'>
-                      <Link className='tags' to={`/seller/${product.seller._id}`}>
+                      {/* <Link className='tags' to={`/seller/${product.seller._id}`}>
                         {product.seller.seller.name}
-                      </Link>
+      </Link> 
                     </h2>
                     <Rating
                      
                       rating={product.seller.seller.rating}
                       numReviews={product.seller.seller.numReviews}
-                    ></Rating>
-      </li>*/}
+                    ></Rating> 
+      </li> */}
                   <li>
                     <br />
                     <div className="row">
@@ -111,7 +112,8 @@ export default function ProductScreen(props) {
                     <div className="row">
                       <div>Status</div>
                       <div>
-                        {product.countInStock > 0 ? (
+                      {/* product.countInStock  */}
+                        {product.quantity > 0 ? (
                           <span className="success">In Stock</span>
                         ) : (
                           <span className="danger">Unavailable</span>
@@ -119,7 +121,8 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                   </li>
-                  {product.countInStock > 0 && (
+                  {/* product.countInStock */}
+                  {product.quantity > 0 && (
                     <>
                       <li>
                         
@@ -130,7 +133,8 @@ export default function ProductScreen(props) {
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
                             >
-                              {[...Array(product.countInStock).keys()].map(
+                              {/* product.countInStock */}
+                              {[...Array(product.quantity).keys()].map(
                                 (x) => (
                                   <option key={x + 1} value={x + 1}>
                                     {x + 1}

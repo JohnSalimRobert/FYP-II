@@ -41,6 +41,7 @@ export default function CartScreen(props) {
           </MessageBox>
         ) : (
           <ul>
+            {console.log(cartItems)}
             {cartItems.map((item) => (
               <li key={item.product}>
                 <div className="row">
@@ -63,7 +64,8 @@ export default function CartScreen(props) {
                         )
                       }
                     >
-                      {[...Array(item.countInStock).keys()].map((x) => (
+                     {/* item.countInStock  */}
+                      {[...Array(item.quantity).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>

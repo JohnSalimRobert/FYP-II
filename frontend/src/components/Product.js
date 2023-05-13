@@ -15,15 +15,23 @@ export default function Product(props) {
         </Link>
         <Rating
           rating={product.rating}
-          numReviews={product.numReviews}
+          numReviews={product.numReviews ? product.numReviews : ''}
         ></Rating>
         <div className="row">
           <div className="price">${product.price}</div>
           <div>
-           {/*  <Link to={`/seller/${product.seller._id}`}>
+            {/* <Link to={`/seller/${product.seller._id}`}>
               {product.seller.seller.name}
-            </Link>*/}
+            </Link> */}
           </div>
+          {/* <div>
+          <button
+                          onClick={addToCartHandler}
+                          className="primary block"
+                        >
+                          Add to Cart
+                        </button>
+          </div> */}
         </div>
       </div>
     </div>

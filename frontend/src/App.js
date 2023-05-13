@@ -30,7 +30,8 @@ import MessageBox from './components/MessageBox';
 import MapScreen from './screens/MapScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import SupportScreen from './screens/SupportScreen';
-import ChatBox from './components/ChatBox';
+// import ChatBox from './components/ChatBox';
+import Footer from './components/Footer';
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -60,7 +61,7 @@ function App() {
             <button
               type="button"
               className="open-sidebar"
-              onClick={() => setSidebarIsOpen(true)}
+              onMouseOver={() => setSidebarIsOpen(true)}
             >
               <i className="fa fa-bars"></i>
             </button>
@@ -314,8 +315,10 @@ function App() {
           </Routes>
         </main>
         <footer className="row center">
-          {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-          <div>All right reserved</div>{' '}
+          {/* {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />} */}
+          {/* <div className='col-12'><p>All right reserved</p></div>{' '}
+          <div className='col-12'><p>Icon</p></div> */}
+          <Footer />
         </footer>
       </div>
     </BrowserRouter>
