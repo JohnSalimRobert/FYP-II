@@ -61,7 +61,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
+          <Link className="btn-flip" data-back="Back to Homepage" data-front="Take me back" to="/"></Link>
           <div className="row top">
             <div className="col-1">
               <img className="medium" src={`/api/products/product-photo/${product._id}`} alt={product.name} />

@@ -47,7 +47,7 @@ export default function CartScreen(props) {
                 <div className="row">
                   <div>
                     <img
-                      src={item.image}
+                      src={`/api/products/product-photo/${item.product}`}
                       alt={item.name}
                       className="small"
                     ></img>

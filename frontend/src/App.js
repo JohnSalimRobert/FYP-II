@@ -53,6 +53,7 @@ function App() {
   useEffect(() => {
     dispatch(listProductCategories());
   }, [dispatch]);
+ console.log(categories);
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -159,14 +160,14 @@ function App() {
             ) : errorCategories ? (
               <MessageBox variant="danger">{errorCategories}</MessageBox>
             ) : (
-              categories.map((c) => (
-                <li key={c}>
+              categories.length > 0 && categories.map((link) => (
+                <li key={link._id}>
                   <Link
                     className='tags'
-                    to={`/search/category/${c}`}
+                    to={`/search/category/${link.slug}`}
                     onClick={() => setSidebarIsOpen(false)}
                   >
-                    {c}
+                    {link.name}
                   </Link>
                 </li>
               ))

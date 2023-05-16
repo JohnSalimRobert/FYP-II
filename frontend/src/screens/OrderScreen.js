@@ -128,7 +128,7 @@ export default function OrderScreen(props) {
                       <div className="row">
                         <div>
                           <img
-                            src={item.image}
+                            src={`/api/products/product-photo/${item.product}`}
                             alt={item.name}
                             className="small"
                           ></img>

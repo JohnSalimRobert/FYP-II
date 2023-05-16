@@ -2,6 +2,7 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
 import Product from '../models/productModel.js';
+import Category from '../models/categoryModel.js';
 import User from '../models/userModel.js';
 import { isAdmin, isAuth, isSellerOrAdmin } from '../utils.js';
 
@@ -60,13 +61,25 @@ productRouter.get(
   })
 );
 
-productRouter.get(
-  '/categories',
-  expressAsyncHandler(async (req, res) => {
-    const categories = await Product.find().distinct('category');
-    res.send(categories);
-  })
-);
+// productRouter.get(
+//   '/categories',
+//   expressAsyncHandler(async (req, res) => {
+//    const categories = await Product.find().distinct('category');
+//     res.send(categories);
+//   })
+// );
+productRouter.get('/categories', async (req, res) => {
+  try {
+    const categories = await Category.find({});
+    res.status(200).json({
+      categories
+    });
+  } catch (error) {
+    res.status(400).json({
+      error: 'Your request could not be processed. Please try again.'
+    });
+  }
+});
 
 productRouter.get(
   '/seed',

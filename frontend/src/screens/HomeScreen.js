@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
+import Carousel1 from '../components/Carousel';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -28,14 +29,14 @@ export default function HomeScreen() {
   return (
     <div>
      
-      {loadingSellers ? (
+      {/* {loadingSellers ? (
         // <LoadingBox></LoadingBox>
         <></>
       ) : errorSellers ? (
         <MessageBox variant="danger">{errorSellers}</MessageBox>
       ) : (
         <>
-          {/* {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
+          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
           <Carousel showArrows autoPlay showThumbs={false}>
             {sellers.map((seller) => (
               <div key={seller._id}>
@@ -45,9 +46,11 @@ export default function HomeScreen() {
                 </Link>
               </div>
             ))}
-          </Carousel> */}
+          </Carousel> 
         </>
-      )}
+      )} */}
+
+      <Carousel1 />
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
