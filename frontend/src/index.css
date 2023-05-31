@@ -36,6 +36,13 @@ linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
 linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
 background-color: #131313;
 background-size: 20px 20px;
+/*Building a sticky navbar*/
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+position: sticky;
+z-index: 500;
 }
 main {
   grid-area: main;
@@ -185,8 +192,9 @@ header a {
 }
 a.brand {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
+  margin-left: 2rem;
 }
 .badge {
   background-color: #f02020;
@@ -272,8 +280,8 @@ img.small {
   width: 100%;
 }
 img.medium {
-  max-width: 29rem;
-  width: 100%;
+  width: 29rem;
+  /* width: 100%; */
 }
 img.large {
   width: 100%;
@@ -396,8 +404,20 @@ img.large {
 .carousel .slide img {
   max-width: 30rem;
 }
+.carousel-root {
+  width: 89rem;
+}
 
-/* Search */
+.sideImg img {
+  width: 30rem;
+  height: 50rem;
+}
+
+/* Search  => form.search added and width size added*/
+
+form.search{
+  width: 35rem;
+}
 .search button {
   border-radius: 0 0.5rem 0.5rem 0;
   border-right: none;
@@ -407,6 +427,7 @@ img.large {
   border-radius: 0.5rem 0 0 0.5rem;
   border-right: none;
   margin-left: 0.5rem;
+  width: 81.01%;
 }
 .active {
   font-weight: bold;
@@ -627,4 +648,26 @@ img.large {
     content: attr(data-front);
     transform: translateY(0) rotateX(0);
   }
+}
+
+/*Cart Screen Table*/
+.cartTable {
+  display: flex;
+}
+
+.cartTable1{
+width: 60rem;
+}
+.cartTable2{
+  width: 17rem;
+}
+.row.cart {
+  justify-content: left;
+}
+
+/*Remove ul bullets*/
+ul {
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }

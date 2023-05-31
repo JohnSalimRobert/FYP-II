@@ -16,7 +16,7 @@ export default function ProductScreen(props) {
 
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
-  console.log(productDetails);
+  // console.log(productDetails);
   const { loading, error, product } = productDetails;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -188,11 +188,11 @@ export default function ProductScreen(props) {
                         onChange={(e) => setRating(e.target.value)}
                       >
                         <option value="">Select...</option>
-                        <option value="1">1- Poor</option>
-                        <option value="2">2- Fair</option>
-                        <option value="3">3- Good</option>
-                        <option value="4">4- Very good</option>
-                        <option value="5">5- Excelent</option>
+                        <option value="1">1 star</option>
+                        <option value="2">2 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="5">5 stars</option>
                       </select>
                     </div>
                     <div>

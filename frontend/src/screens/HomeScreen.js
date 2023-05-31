@@ -9,6 +9,7 @@ import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import Carousel1 from '../components/Carousel';
+import sideImg from '../Ecommerce_banners/sideImg.gif'
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ export default function HomeScreen() {
     dispatch(listProducts({}));
     dispatch(listTopSellers());
   }, [dispatch]);
+  // console.log(products);
   return (
     <div>
      
@@ -49,9 +51,16 @@ export default function HomeScreen() {
           </Carousel> 
         </>
       )} */}
-
+<div className='row center '>
+  <div className='sideImg'>
+    <img alt='Flash sale' src={sideImg} />
+  </div>
       <Carousel1 />
-      <h2>Featured Products</h2>
+      <div className='sideImg'>
+    <img alt='Flash sale' src={sideImg} />
+  </div>
+      </div>
+      <h1>Featured Products</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

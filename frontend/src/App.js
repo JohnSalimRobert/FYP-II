@@ -48,12 +48,21 @@ function App() {
   const {
     loading: loadingCategories,
     error: errorCategories,
-    categories,
+    categories
   } = productCategoryList;
   useEffect(() => {
     dispatch(listProductCategories());
   }, [dispatch]);
- console.log(categories);
+  if(categories){
+  
+  console.log(categories.categories[0]);
+  } else{
+    console.log("errr");
+  }
+  // console.log(categories['categories'][0])
+  // console.log(loadingCategories + "This is loading Categories");
+  // console.log(errorCategories + "This is error categories");
+  
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -75,7 +84,7 @@ function App() {
           </div>
           <div>
             <Link to="/cart">
-              Cart
+            <i className="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
@@ -155,21 +164,25 @@ function App() {
                 <i className="fa fa-close"></i>
               </button>
             </li>
-            {loadingCategories ? (
+            {loadingCategories===true ? (
               <LoadingBox></LoadingBox>
             ) : errorCategories ? (
               <MessageBox variant="danger">{errorCategories}</MessageBox>
             ) : (
-              categories.length > 0 && categories.map((link) => (
-                <li key={link._id}>
+                
+              categories.categories.length &&
+              categories.categories.map((c) => ( 
+                       
+                <li key={c._id}>
                   <Link
                     className='tags'
-                    to={`/search/category/${link.slug}`}
+                    to={`/search/category/${c._id}`}
                     onClick={() => setSidebarIsOpen(false)}
                   >
-                    {link.name}
+                    {c.name}
                   </Link>
                 </li>
+               
               ))
             )}
           </ul>

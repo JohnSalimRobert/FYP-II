@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import IMG1 from "../Ecommerce_banners/‫IMG_1.jpg";
+import IMG1 from "../Ecommerce_banners/IMG_1.gif";
 import IMG2 from "../Ecommerce_banners/IMG_2.jpg";
 import IMG3 from "../Ecommerce_banners/IMG_3.jpg";
 import IMG4 from "../Ecommerce_banners/IMG_4.jpg";

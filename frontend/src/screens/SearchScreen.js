@@ -29,6 +29,7 @@ export default function SearchScreen(props) {
     error: errorCategories,
     categories,
   } = productCategoryList;
+  
   useEffect(() => {
     dispatch(
       listProducts({
@@ -97,13 +98,14 @@ export default function SearchScreen(props) {
                     All
                   </Link>
                 </li>
-                {categories.map((c) => (
-                  <li key={c}>
+                {categories.categories.length >0 &&
+                 categories.categories.map((c) => (
+                  <li key={c._id}>
                     <Link 
                       className={c === category ? 'active tags' : 'tags'}
-                      to={getFilterUrl({ category: c })}
+                      to={getFilterUrl({ category: c._id })}
                     >
-                      {c}
+                      {c.name}
                     </Link>
                   </li>
                 ))}
