@@ -26,9 +26,9 @@ export default function CartScreen(props) {
   const itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   );
-  const shippingPrice = itemsPrice > 100 ? toPrice(0) : toPrice(10);
+  // const shippingPrice = itemsPrice > 100 ? toPrice(0) : toPrice(10);
   const taxPrice = toPrice(0.15 * itemsPrice);
-  const totalPrice = itemsPrice + shippingPrice + taxPrice;
+  const totalPrice = itemsPrice + taxPrice;
   /*... */
 
   const dispatch = useDispatch();
@@ -143,7 +143,7 @@ export default function CartScreen(props) {
               <li>
                 <div className="row">
                   <div>Shipping</div>
-                  <div>${shippingPrice.toFixed(2)}</div>
+                  <div><strong>TBD</strong></div>
                 </div>
               </li>
               <li>

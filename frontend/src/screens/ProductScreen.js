@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { createReview, detailsProduct } from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import Rating from '../components/Rating';
-import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { createReview, detailsProduct } from "../actions/productActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import Rating from "../components/Rating";
+import { PRODUCT_REVIEW_CREATE_RESET } from "../constants/productConstants";
 
 export default function ProductScreen(props) {
   const navigate = useNavigate();
@@ -29,13 +29,13 @@ export default function ProductScreen(props) {
   } = productReviewCreate;
 
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
 
   useEffect(() => {
     if (successReviewCreate) {
-      window.alert('Review Submitted Successfully');
-      setRating('');
-      setComment('');
+      window.alert("Review Submitted Successfully");
+      setRating("");
+      setComment("");
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
     dispatch(detailsProduct(productId));
@@ -50,7 +50,7 @@ export default function ProductScreen(props) {
         createReview(productId, { rating, comment, name: userInfo.name })
       );
     } else {
-      alert('Please enter comment and rating');
+      alert("Please enter comment and rating");
     }
   };
   return (
@@ -61,10 +61,19 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link className="btn-flip" data-back="Back to Homepage" data-front="Take me back" to="/"></Link>
+          <Link
+            className="btn-flip"
+            data-back="Back to Homepage"
+            data-front="Take me back"
+            to="/"
+          ></Link>
           <div className="row top">
             <div className="col-1">
-              <img className="medium" src={`/api/products/product-photo/${product._id}`} alt={product.name} />
+              <img
+                className="medium"
+                src={`/api/products/product-photo/${product._id}`}
+                alt={product.name}
+              />
             </div>
             <div className="col-2">
               <ul>
@@ -86,8 +95,8 @@ export default function ProductScreen(props) {
             </div>
             <div className="col-2">
               <div className="card card-body">
-                <ul className='unlist'>
-                   {/* <li>
+                <ul className="unlist">
+                  {/* <li>
                     <p>Seller</p>
                     <h2 className='example'>
                       {/* <Link className='tags' to={`/seller/${product.seller._id}`}>
@@ -108,11 +117,11 @@ export default function ProductScreen(props) {
                     </div>
                   </li>
                   <li>
-                  <br />
+                    <br />
                     <div className="row">
                       <div>Status</div>
                       <div>
-                      {/* product.countInStock  */}
+                        {/* product.countInStock  */}
                         {product.quantity > 0 ? (
                           <span className="success">In Stock</span>
                         ) : (
@@ -125,7 +134,6 @@ export default function ProductScreen(props) {
                   {product.quantity > 0 && (
                     <>
                       <li>
-                        
                         <div className="row">
                           <div>Qty</div>
                           <div>
@@ -134,13 +142,11 @@ export default function ProductScreen(props) {
                               onChange={(e) => setQty(e.target.value)}
                             >
                               {/* product.countInStock */}
-                              {[...Array(product.quantity).keys()].map(
-                                (x) => (
-                                  <option key={x + 1} value={x + 1}>
-                                    {x + 1}
-                                  </option>
-                                )
-                              )}
+                              {[...Array(product.quantity).keys()].map((x) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              ))}
                             </select>
                           </div>
                         </div>
@@ -161,26 +167,54 @@ export default function ProductScreen(props) {
             </div>
           </div>
           <div>
+          <section id="testimonials">
+            <div className="testimonial-heading">
             <h2 id="reviews">Reviews</h2>
+            </div>
             {product.reviews.length === 0 && (
               <MessageBox>There is no review</MessageBox>
             )}
-            <ul>
-              {product.reviews.map((review) => (
-                <li key={review._id}>
-                  <strong>{review.name}</strong>
-                  <Rating rating={review.rating} caption=" "></Rating>
-                  <p>{review.createdAt.substring(0, 10)}</p>
-                  <p>{review.comment}</p>
-                </li>
-              ))}
+            
+              <div className="testimonial-box-container">
+                {product.reviews.map((review) => (
+                  // <li key={review._id}>
+                  //   <strong>{review.name}</strong>
+                  //   <Rating rating={review.rating} caption=" "></Rating>
+                  //   <p>{review.createdAt.substring(0, 10)}</p>
+                  //   <p>{review.comment}</p>
+                  // </li>
+                  <div class="testimonial-box">
+                    <div class="box-top">
+                      <div class="profile">
+                        {/* <div class="profile-img">
+                          <img src="images/c-1.jpg" />
+                        </div> */}
+                        <div class="name-user">
+                          <strong>{review.name}</strong>
+                          <span>{review.createdAt.substring(0,10)}</span>
+                        </div>
+                      </div>
+                      <div class="reviews">
+                        <Rating rating={review.rating} caption=" "></Rating>
+                      </div>
+                    </div>
+                    <div class="client-comment">
+                      <p>
+                        {review.comment}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              </section>
+              <ul>
               <li>
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
                     <div>
                       <h2>Write a customer review</h2>
                     </div>
-                    <div>
+                    {/* <div>
                       <label htmlFor="rating">Rating</label>
                       <select
                         id="rating"
@@ -194,7 +228,7 @@ export default function ProductScreen(props) {
                         <option value="4">4 stars</option>
                         <option value="5">5 stars</option>
                       </select>
-                    </div>
+                    </div> */}
                     <div>
                       <label htmlFor="comment">Comment</label>
                       <textarea

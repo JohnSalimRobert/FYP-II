@@ -12,6 +12,7 @@ export default function SearchBox() {
     <form className="search" onSubmit={submitHandler}>
       <div className="row">
         <input
+          placeholder='Search WishList'
           type="text"
           name="q"
           id="q"
