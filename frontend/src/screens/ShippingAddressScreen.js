@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
+
 export default function ShippingAddressScreen(props) {
   const navigate = useNavigate();
   const userSignin = useSelector((state) => state.userSignin);
@@ -70,6 +71,10 @@ export default function ShippingAddressScreen(props) {
     );
     navigate('/map');
   };
+  const handleInput = (value) => {
+    setCountry(value);
+  };
+
   return (
     <div>
       <CheckoutSteps step1 step2></CheckoutSteps>
@@ -131,7 +136,9 @@ export default function ShippingAddressScreen(props) {
             onChange={(e) => setCountry(e.target.value)}
             required
           ></input>
+         
         </div>
+        
         {/* <div>
           <label htmlFor="chooseOnMap">Location</label>
           <button type="button" onClick={chooseOnMap}>

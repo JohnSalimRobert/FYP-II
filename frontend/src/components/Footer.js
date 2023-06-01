@@ -7,8 +7,8 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-row">
           <div className="footer-col">
-            <h4>Company</h4>
-            <ul>
+            <h2>Company</h2>
+            <div className="footer-p">
               <p>
                 Shop your heart out with Wishlist! Our ecommerce website offers
                 a wide range of products at affordable prices. From clothing to
@@ -21,7 +21,7 @@ function Footer() {
               </p>
               
               
-            </ul>
+            </div>
           </div>
           <div className="footer-col">
             {/* <h4>Get Help</h4>
@@ -36,21 +36,24 @@ function Footer() {
                 <Link to="/returns">Returns</Link>
               </li>
             </ul> */}
-            <h4>Follow Us</h4>
+            <h2>Follow Us</h2>
             <div className="icons">
-                <Link to="https://www.facebook.com/"><i className="fa fa-facebook fa-2x white" aria-hidden="true"></i></Link>
-                <Link to="https://www.twitter.com/"><i className="fa fa-twitter fa-2x white" aria-hidden="true"></i></Link>
-                <Link to="https://www.instagram.com/"><i className="fa fa-instagram fa-2x white" aria-hidden="true"></i></Link>
+                <Link to="https://www.facebook.com/"><i className="fa fa-facebook fa-3x white" aria-hidden="true"></i></Link>
+                <Link to="https://www.twitter.com/"><i className="fa fa-twitter fa-3x white" aria-hidden="true"></i></Link>
+                <Link to="https://www.instagram.com/"><i className="fa fa-instagram fa-3x white" aria-hidden="true"></i></Link>
                 </div>
           </div>
           <div className="footer-col">
-            {/* <h4>Follow Us</h4>
-            <div className="icons">
-                <Link to="https://www.facebook.com/"><i className="fa fa-facebook fa-2x white" aria-hidden="true"></i></Link>
-                <Link to="https://www.twitter.com/"><i className="fa fa-twitter fa-2x white" aria-hidden="true"></i></Link>
-                <Link to="https://www.instagram.com/"><i className="fa fa-instagram fa-2x white" aria-hidden="true"></i></Link>
-                </div> */}
-            
+            <h2>About Us</h2>
+            <div className="footer-p">
+            <div>
+            <iframe src="https://www.youtube.com/embed/hHqW0gtiMy4?autoplay=1&controls=0&muted=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div>
+              <p><strong>Address:</strong> 7921 Jamel Mountain, Suite 327, 59065-4404, North Burnice, Alaska, United States</p>
+              <p><strong>UAN:</strong> 423967399765 </p>
+                </div>
+                </div>
           </div>
         </div>
 

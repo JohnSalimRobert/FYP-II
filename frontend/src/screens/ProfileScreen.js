@@ -105,6 +105,8 @@ export default function ProfileScreen() {
                 id="password"
                 type="password"
                 placeholder="Enter password"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
@@ -114,6 +116,8 @@ export default function ProfileScreen() {
                 id="confirmPassword"
                 type="password"
                 placeholder="Enter confirm password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
             </div>

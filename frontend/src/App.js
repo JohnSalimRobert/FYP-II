@@ -71,7 +71,7 @@ function App() {
             <button
               type="button"
               className="open-sidebar"
-              onMouseOver={() => setSidebarIsOpen(true)}
+              onClick={() => setSidebarIsOpen(true)}
             >
               <i className="fa fa-bars"></i>
             </button>

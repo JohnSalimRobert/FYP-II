@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { deliverOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import img10 from '../Ecommerce_banners/img10.jpg'
 import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
@@ -151,7 +152,7 @@ export default function OrderScreen(props) {
           </ul>
         </div>
         <div className="col-2">
-          <div className="card card-body">
+          <div className="order card-body">
             <ul className='example'>
               <li>
                 <h2>Order Summary</h2>
@@ -219,6 +220,11 @@ export default function OrderScreen(props) {
                 </li>
               )}
             </ul>
+          </div>
+          <div className='row center orderpage'><h2>Thank You For Shopping with Us</h2>
+          <Link className="brand orderpage" to="/">
+              Back to WishList
+            </Link>
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import Carousel1 from '../components/Carousel';
 import sideImg from '../Ecommerce_banners/sideImg.gif'
+import Categories from'../components/Categories'
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -60,7 +61,11 @@ export default function HomeScreen() {
     <img alt='Flash sale' src={sideImg} />
   </div>
       </div>
-      <h1>Featured Products</h1>
+      <h1>Categories</h1>
+      <div className='row center'>
+        <Categories />
+      </div>
+      <h1>Our Products</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
