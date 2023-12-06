@@ -9,7 +9,7 @@ export default function Product(props) {
 
 
   const [qty, setQty] = useState(1);
-
+// line 21 replaced `/api/products/product-photo/${product._id}`
 
   const addToCartHandler = () => {
     setQty(qty + 1);
@@ -18,7 +18,7 @@ export default function Product(props) {
   return (
     <div key={product._id} className="card">
       <Link to={`/product/${product._id}`}>
-        <img className="medium" src={`/api/products/product-photo/${product._id}`} alt={product.name} />
+        <img className="medium" src={product.image} alt={product.name} />
       </Link>
       <div className="card-body">
         <Link className='tags' to={`/product/${product._id}`}>

@@ -11,7 +11,7 @@ const productRouter = express.Router();
 productRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
-    const pageSize = Number(req.query.pageSize) || 12;
+    const pageSize = Number(req.query.pageSize) || 14;
     const page = Number(req.query.pageNumber) || 1;
     const name = req.query.name || '';
     const category = req.query.category || '';
@@ -72,8 +72,9 @@ productRouter.get(
 //   })
 // );
 productRouter.get('/categories', async (req, res) => {
+  // Category.find({});
   try {
-    const categories = await Category.find({});
+    const categories = await Product.find().distinct('category')
     res.status(200).json({
       categories
     });
@@ -207,11 +208,11 @@ productRouter.post(
     const productId = req.params.id;
     const product = await Product.findById(productId);
     if (product) {
-      if (product.reviews.find((x) => x.name === req.user.name)) {
-        return res
-          .status(400)
-          .send({ message: 'You already submitted a review' });
-      }
+      // if (product.reviews.find((x) => x.name === req.user.name)) {
+      //   return res
+      //     .status(400)
+      //     .send({ message: 'You already submitted a review' });
+      // }
       const review = {
         name: req.user.name,
         rating: Number(req.body.rating),

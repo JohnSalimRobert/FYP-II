@@ -335,6 +335,7 @@ img.small {
 }
 img.medium {
   width: 29rem;
+  height: 29rem;
   /* width: 100%; */
 }
 img.large {
@@ -490,7 +491,15 @@ img.large {
   width: 30rem;
   height: 50rem;
 }
-
+@media screen and (max-width: 1240px) {
+  .sideImg { 
+    visibility: hidden;
+  }
+  .sideImg img {
+    width: 0rem;
+    height: 0rem;
+  }
+}
 /* Search  => form.search added and width size added*/
 
 form.search{

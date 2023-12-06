@@ -55,7 +55,7 @@ function App() {
   }, [dispatch]);
   if(categories){
   
-  console.log(categories.categories[0]);
+  console.log(categories);
   } else{
     console.log("errr");
   }
@@ -169,17 +169,17 @@ function App() {
             ) : errorCategories ? (
               <MessageBox variant="danger">{errorCategories}</MessageBox>
             ) : (
-                
+                //  categories.categories.length
               categories.categories.length &&
               categories.categories.map((c) => ( 
                        
-                <li key={c._id}>
+                <li key={c}>
                   <Link
                     className='tags'
-                    to={`/search/category/${c._id}`}
+                    to={`/search/category/${c}`}
                     onClick={() => setSidebarIsOpen(false)}
                   >
-                    {c.name}
+                    {c}
                   </Link>
                 </li>
                

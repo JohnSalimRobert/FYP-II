@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //mongodb+srv://haider:Furcfurc1.@cluster0.mpdropb.mongodb.net/ecommerce
 
-mongoose.connect('mongodb+srv://haider:Furcfurc1.@cluster0.mpdropb.mongodb.net/ecommerce').then(()=> console.log("Connected to DB"));
+mongoose.connect('mongodb://127.0.0.1/amazona').then(()=> console.log("Connected to DB"));
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);

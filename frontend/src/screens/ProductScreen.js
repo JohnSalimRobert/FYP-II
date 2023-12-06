@@ -53,6 +53,12 @@ export default function ProductScreen(props) {
       alert("Please enter comment and rating");
     }
   };
+
+  useEffect(()=>{
+    console.log(product)
+  }) 
+
+  // line 76 replaced `/api/products/product-photo/${product._id}`
   return (
     <div>
       {loading ? (
@@ -71,7 +77,7 @@ export default function ProductScreen(props) {
             <div className="col-1">
               <img
                 className="medium"
-                src={`/api/products/product-photo/${product._id}`}
+                src={product.image}
                 alt={product.name}
               />
             </div>
@@ -121,8 +127,8 @@ export default function ProductScreen(props) {
                     <div className="row">
                       <div>Status</div>
                       <div>
-                        {/* product.countInStock  */}
-                        {product.quantity > 0 ? (
+                        {/* product.quantity  */}
+                        {product.countInStock > 0 ? (
                           <span className="success">In Stock</span>
                         ) : (
                           <span className="danger">Unavailable</span>
@@ -130,8 +136,8 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                   </li>
-                  {/* product.countInStock */}
-                  {product.quantity > 0 && (
+                  {/* product.quantity */}
+                  {product.countInStock > 0 && (
                     <>
                       <li>
                         <div className="row">
@@ -141,8 +147,8 @@ export default function ProductScreen(props) {
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
                             >
-                              {/* product.countInStock */}
-                              {[...Array(product.quantity).keys()].map((x) => (
+                              {/* product.quantity */}
+                              {[...Array(product.countInStock).keys()].map((x) => (
                                 <option key={x + 1} value={x + 1}>
                                   {x + 1}
                                 </option>
@@ -167,14 +173,14 @@ export default function ProductScreen(props) {
             </div>
           </div>
           <div>
-          <section id="testimonials">
-            <div className="testimonial-heading">
-            <h2 id="reviews">Reviews</h2>
-            </div>
-            {product.reviews.length === 0 && (
-              <MessageBox>There is no review</MessageBox>
-            )}
-            
+            <section id="testimonials">
+              <div className="testimonial-heading">
+                <h2 id="reviews">Reviews</h2>
+              </div>
+              {product.reviews.length === 0 && (
+                <MessageBox>There is no review</MessageBox>
+              )}
+
               <div className="testimonial-box-container">
                 {product.reviews.map((review) => (
                   // <li key={review._id}>
@@ -191,7 +197,7 @@ export default function ProductScreen(props) {
                         </div> */}
                         <div class="name-user">
                           <strong>{review.name}</strong>
-                          <span>{review.createdAt.substring(0,10)}</span>
+                          <span>{review.createdAt.substring(0, 10)}</span>
                         </div>
                       </div>
                       <div class="reviews">
@@ -199,22 +205,20 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                     <div class="client-comment">
-                      <p>
-                        {review.comment}
-                      </p>
+                      <p>{review.comment}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              </section>
-              <ul>
+            </section>
+            <ul>
               <li>
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
                     <div>
                       <h2>Write a customer review</h2>
                     </div>
-                    {/* <div>
+                    <div>
                       <label htmlFor="rating">Rating</label>
                       <select
                         id="rating"
@@ -228,7 +232,7 @@ export default function ProductScreen(props) {
                         <option value="4">4 stars</option>
                         <option value="5">5 stars</option>
                       </select>
-                    </div> */}
+                    </div>
                     <div>
                       <label htmlFor="comment">Comment</label>
                       <textarea
