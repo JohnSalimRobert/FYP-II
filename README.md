@@ -7,6 +7,7 @@ Welcome to my React and Node Website to build a fully-functional e-commerce webs
 
 - 👉 Homepage: ![amazona](/template/images/Homepage-wishlist.png)
 - 👉 Homepage - Product Section:  ![amazona](/template/images/Homepage-our-products.png)
+- 👉 Product and Comment Section:  ![amazona](/template/images/Product-page.png)
 
 
 ## Technologies used
@@ -66,10 +67,6 @@ $ npm start
 - Run http://localhost:3000/signin
 - Enter admin email and password and click signin
 
-## Support
-
-- Q/A: https://webacademy.pro/amazona
-- Contact Instructor: [Basir](mailto:basir.jafarzadeh@gmail.com)
 
 ## Lessons
 

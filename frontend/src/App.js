@@ -111,7 +111,7 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
-            {userInfo && userInfo.isSeller && (
+            {/* {userInfo && userInfo.isSeller && (
               <div className="dropdown">
                 <Link to="#admin">
                   Seller <i className="fa fa-caret-down"></i>
@@ -125,7 +125,7 @@ function App() {
                   </li>
                 </ul>
               </div>
-            )}
+            )} */}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
