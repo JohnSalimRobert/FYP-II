@@ -930,3 +930,8 @@ a.brand.orderpage {
   display: inline-block;
   font-size: 16px;
 }
+
+.l-container {
+  margin: auto;
+  max-width: 1240px;
+}
