@@ -5,8 +5,8 @@ Welcome to my React and Node Website to build a fully-functional e-commerce webs
 
 ## Website Images
 
-- 👉 Heroku : [https://react-amazona.herokuapp.com](https://react-amazona.herokuapp.com)
-- 👉 Heroku Mirror: [https://react-amazona-mirror.herokuapp.com](https://react-amazona-mirror.herokuapp.com)
+- 👉 Homepage: ![amazona](/template/images/Homepage-wishlist.png)
+- 👉 Homepage - Product Section:  ![amazona](/template/images/Homepage-our-products.png)
 
 
 ## Technologies used
